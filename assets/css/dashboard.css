@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+/* Sidebar */
+
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: #3A1919;
+}
+
+/* Main Content */
+
+.main-content{
+    width: 100%;
+
+    border: 1px solid red;
+}

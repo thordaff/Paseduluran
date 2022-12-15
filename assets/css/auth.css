@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Quicksand';
+}
+
+/* Sidebar */
+
+.sidebar .login-bar{
+    width: 45%;
+    height: 100vh;
+    background-color: #3A1919;
+}
+
+.alert-text{
+    position: relative;
+    top: 20px;
+    height: 75px;
+}
+
+.login-body{
+    position: relative;
+    top: 100px;
+}
+
+.login-body input{
+    width: 75%;
+
+    outline: none;
+    border-radius: 10px;
+}
+
+.login-body button{
+    width: 50%;
+    background-color: white;
+
+    border-radius: 5px;
+    border: 1px solid black;
+
+    outline: none;
+}
+
+.login-body button:hover{
+    background: none;
+    color: white;
+    border: 1px solid white;
+
+    outline: none;
+}
+
+/* Main Content */
+
+.main-content{
+    width: 100%;
+    max-width: 100%;
+}
+
+.carousel{
+    top: 100px;
+    width: 70%;
+    height: 50%;
+}

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Quicksand';
+}
+
+.active{
+    font-weight: 600;
+}
+
+.bg-header{
+    position: relative;
+}
+
+.bg-header > .container-fluid{
+    width: 100%;
+    height: 100%;
+    background-color: #3A1919;
+}
+
+/* Navbar */
+
+nav ul li {
+    margin: 0px 15px;
+}
+
+nav .login-btn{
+    color: rgba(255, 255, 255, 0.50);
+    text-decoration: none;
+}
+
+nav .login-btn:hover{
+    color: white;
+}
+
+/* Heroes Header */
+
+.heroes-header .rect-1{
+    width: 275px;
+    height: 375px;
+
+    border-radius: 15px;
+    background-color: grey;
+}
+
+.heroes-header .text-head p{
+    text-align: justify;
+}
+
+/* Qr Menu Card */
+
+.card-body .qr-menu{
+    width: 250px;
+    height: 250px;
+
+    background-color: grey;
+}
+
+/* Short Inform */
+
+.short-inform .rect-1{
+    width: 250px;
+    height: 250px;
+
+    background-color: grey;
+}
+
+/* Best Seller */
+
+.best-seller .bg-seller{
+    width: 100%;
+    height: auto;
+
+    background-color: #3A1919;
+}
