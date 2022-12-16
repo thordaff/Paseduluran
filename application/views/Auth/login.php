@@ -12,69 +12,55 @@
     <title><?php echo $judul ?></title>
   </head>
     <body>
+        
+        <!-- Navbar Start -->
 
-        <!-- SideBar Start -->
-
-        <section class="sidebar">
-            <div class="d-flex justify-content-start">
-                <section class="login-bar">
-                    <div class="container">
-                        <div class="login-title mt-3 ms-3">
-                            <h1 class="text-light">Paseduluran</h1>
-                        </div>
-                        <div class="alert-text ms-3">
-                            <?php echo $this->session->flashdata('message'); ?>
-                        </div>
-                        <div class="login-body ms-3">
-                            <form action="<?php echo base_url('Auth/login');?>" method="post">
-                                <div class="email">
-                                    <label class="text-light" for="email">Email</label><br>
-                                    <input type="text" name="email" id="email">
-                                </div>
-                                <div class="password mt-3">
-                                    <label class="text-light" for="password">Password</label><br>
-                                    <input type="password" name="password" id="password">
-                                </div>
-                                <div class="login-btn mt-5">
-                                    <button>Masuk</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </section>
-            
-                <!-- SideBar End -->
-                
-                <section class="d-flex justify-content-center main-content">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="/assets/image/default.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/assets/image/default.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/assets/image/default.jpg" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </section>
+        <nav class="navbar navbar-light mt-3">
+            <div class="container">
+                <span class="navbar-brand mb-0 h1 fs-4">Panggon Paseduluran</span>
             </div>
-        </section>        
+        </nav>
+
+        <!-- Navbar End -->
+
+        <!-- Card Auth Start -->
+
+        <section class="card-auth">
+            <div class="container">
+                <div class="alert-text text-center mb-5" style="height: 70px;">
+                    <?php echo $this->session->flashdata('message'); ?>
+                </div>
+                <div class="card mx-auto mt-5" style="width: 25rem;">
+                    <div class="card-title ms-3 mt-3">
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="fw-bold">Login</h3>
+                            </div>
+                            <div class="col reg">
+                                <a href="#">Register</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body mx-auto">
+                        <form action="<?php echo base_url('Auth/Login')?>" method="post">
+                            <div class="email">
+                                <label for="email">Email</label><br>
+                                <input type="text" name="email" id="email">
+                            </div>
+                            <div class="password mt-3">
+                                <label for="password">Password</label><br>
+                                <input type="password" name="password" id="password">
+                            </div>
+                            <div class="login-btn mt-5 text-center">
+                                <button>Masuk</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card Auth End -->
 
         <!-- Js File -->
         <script src="https://kit.fontawesome.com/25af777db1.js" crossorigin="anonymous"></script>

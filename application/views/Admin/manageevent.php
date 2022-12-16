@@ -22,13 +22,13 @@
               <div class="side-body mt-5 ms-3 pt-5">
                 <ul class="navbar-nav py-4" id="SideNav">
                   <li class="nav-item">
-                    <a type="button" class="nav-link active" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-gauge" style="margin-right: 10px;"></i>dashboard</a>
+                    <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-gauge" style="margin-right: 10px;"></i>dashboard</a>
                   </li>
                   <li class="nav-item">
                     <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard/menu" class="nav-link"><i class="fa-solid fa-clipboard" style="margin-right: 10px;"></i>Manage Menu</a>
                   </li>
                   <li class="nav-item">
-                    <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard/event"><i class="fa-regular fa-calendar-minus" style="margin-right: 10px;"></i>Manage Event</a>
+                    <a type="button" class="nav-link active" href="<?php echo base_url();?>Admin/Dashboard/event"><i class="fa-regular fa-calendar-minus" style="margin-right: 10px;"></i>Manage Event</a>
                   </li>
                 </ul>
               </div>
@@ -43,7 +43,7 @@
         <div class="main-content">
           <div class="container">
             <div class="main-title mt-4">
-              <h2 class="ms-5">Dashboard</h2>
+              <h2 class="ms-5">Manage Event</h2>
             </div>
             <div class="main-body">
 
