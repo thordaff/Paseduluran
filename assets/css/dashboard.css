@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
 
+*{
+    font-family: 'Quicksand';
+}
 /* Sidebar */
 
 .sidebar {
     width: 20em;
-    height: 100vh;
-    background-color: #CE8147;
+    background: #CE8147;
 }
 
 .sidebar .container{
-    height: 38em;
+    max-width: 15em;
 }
 
 .side-title h4{
@@ -52,6 +54,8 @@
 
 .main-content{
     width: 100%;
+
+    border: 1px solid black;
 }
 
 .main-title{

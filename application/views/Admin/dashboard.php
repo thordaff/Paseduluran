@@ -15,7 +15,7 @@
       <div class="d-flex justify-content-start">
         <!-- SideBar Navigation Start -->
         <div class="sidebar">
-          <div class="container">
+          <div class="container position-fixed">
             <div class="side-title mt-4 ms-3">
                 <h4>Panggon Paseduluran</h4>
               </div>

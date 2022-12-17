@@ -15,7 +15,7 @@
       <div class="d-flex justify-content-start">
         <!-- SideBar Navigation Start -->
         <div class="sidebar">
-          <div class="container">
+          <div class="container position-fixed">
             <div class="side-title mt-4 ms-3">
                 <h4>Panggon Paseduluran</h4>
               </div>
@@ -62,25 +62,30 @@
               </button>
             </div>
             <div class="main-body ms-5">
-              <?php 
-              foreach($menu as $m){ 
-              ?>
-              <div class="card" style="width: 35rem;">
-                <div class="card-body">
-                  <div class="row row-cols-2">
-                    <div class="col-7">
-                      <h5 class="card-title"><?php echo $m->nama ?></h5>
-                      <h6 class="card-subtitle mb-2">Rp. <?php echo $m->harga ?></h6>
-                      <h6><?php echo $m->status_id ?></h6>
-                    </div>
-                    <div class="col-5">
-                      <a href="">Edit Menu</a>
-                      <a href="">Hapus Menu</a>
+              <?php foreach($show as $s) :?>
+                <div class="card mt-3" style="width: 35rem;">
+                  <div class="card-body">
+                    <div class="row row-cols-2">
+                      <div class="col-7">
+                        <h5 class="card-title"><?php echo $s->nama ?></h5>
+                        <h6 class="card-subtitle mb-2">Rp. 
+                          <?php echo $s->harga ?>
+                        </h6>
+                        <h6><?php echo $s->status?></h6>
+                      </div>
+                      <div class="col-5">
+                        <a href="">Edit Menu</a>
+                        <a href="">Hapus Menu</a>
+                      </div>
                     </div>
                   </div>
                 </div>
+              <?php endforeach; ?>
+            </div>
+            <div class="row">
+              <div class="col">
+                <?php echo $pagination;?>
               </div>
-              <?php } ?>
             </div>
           </div>
         </div>
@@ -96,13 +101,42 @@
                 <h5 class="modal-title">Tambah Menu</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body">
-                <p>Modal body text goes here.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
+              <form action="<?php echo base_url('Admin/Dashboard/addmenu')?>" method="post">
+                <div class="modal-body">
+                  <div class="name">
+                    <label for="nama">Nama Menu</label><br>
+                    <input type="text" name="nama" id="nama">
+                  </div>
+                  <div class="category mt-3">
+                    <label for="kategori">Kategori</label><br>
+                    <select name="kategori" id="kategori">
+                      <option selected> -- Pilih Kategori Menu --</option>
+                      <option value="Manual Brew">Manual Brew</option>
+						          <option value="Coffee">Coffee</option>
+						          <option value="Latte">Latte</option>
+						          <option value="Tea Based">Tea Based</option>
+						          <option value="Traditional Drink">Traditional Drink</option>
+						          <option value="Food">Food</option>
+                    </select>
+                  </div>
+                  <div class="price mt-3">
+                    <label for="harga">Harga Menu</label><br>
+                    <input type="number" name="harga" id="harga">
+                  </div>
+                  <div class="status mt-3">
+                    <label for="status">Status Menu</label><br>
+                    <select name="status" id="status">
+                      <option selected>-- Pilih Status Menu --</option>
+                      <option value="Tersedia">Tersedia</option>
+                      <option value="Tidak Tersedia">Tidak Tersedia</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                  <button class="btn btn-primary">Tambah Menu</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
