@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
+
+*{
+    font-family: 'Quicksand';
+}
+
+.full-menu .open{
+    width: 15%;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.open .clock{
+    position: relative;
+    bottom: 20px;
+}
+
+.menu-title{
+    width: 25em;
+}
+
+.menu-title .rect{
+    position: relative;
+    top: 10px;
+    width: 6em;
+    height: 10px;
+
+    background-color: #CE8147;
+}
+
+.menu-body .menu{
+    margin: 5px 0px;
+}
+
+.menu .desc{
+    font-size: 12px;
+}

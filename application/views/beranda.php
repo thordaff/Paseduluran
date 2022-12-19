@@ -12,136 +12,137 @@
     <title>Panggon Paseduluran</title>
   </head>
     <body>
-        <div class="bg-header">
-            <div class="container-fluid pb-5">
-             <!-- Navbar Start -->
 
-                <nav class="navbar navbar-expand-lg navbar-dark pt-4 pb-5">
-                    <div class="container">
-                        <a class="navbar-brand" href="#">Panggon paseduluran</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav mx-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Menu</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Event</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Tentang Kami</a>
-                                </li>
-                            </ul>
-                            <a class="nav-link login-btn" href="<?php base_url(); ?>Auth/Login">Login</a>
-                        </div>
-                    </div>
-                </nav>
+    <!-- Off Canvas Start -->
 
-                <!-- Navbar End -->
-
-                <!-- Heroes Header Start -->
-
-                <section class="heroes-header mt-5 mb-5 pb-5">
-                    <div class="container">
-                        <div class="row row-cols-lg-3 row-cols-1 g-3 g-5">
-                            <div class="col-4 text-head text-light">
-                                <h1>Vietnam Drip</h1>
-                                <p class="mt-5">Dari biji kopi yang berasal dari lampung, Menggunakan jenis Robusta yang diracik sedemikian rupa dan menghasilkan Vietnam Drip Terbaik di Panggon Paseduluran</p>
-                            </div>
-                            <div class="col-5">
-                                <div class="rect-1 mx-auto"></div>
-                            </div>
-                            <div class="col-3 text-light mt-auto md-auto">
-                                <p>16.00 - 02.00 WIB</p>
-                                <p>Dari Biji Kopi Pilihan</p>
-                                <p>Sabtu - Minggu Tetap Buka</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Heroes Header End -->
-            </div>    
-        </div>
-
-        <!-- Card Qr Start -->
-
-        <section class="card-QR">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="Navigation" aria-labelledby="offcanvasExampleLabel">
             <div class="container">
-            <div class="card mx-auto" style="width: 35rem; border-radius: 50px;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Panggon Paseduluran</h5>
-                    <div class="qr-menu mx-auto mt-5 mb-5"></div>
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="NavigationLabel">Panggon Paseduluran</h5>
+                    <i class="fa-solid fa-xmark text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></i>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="nav">
+                        <ul class="navbar-nav" id="Nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark active" href="<?php echo base_url();?>Beranda">Beranda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="<?php echo base_url();?>Menu">Menu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#">Event</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#">Informasi</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            </div>
-        </section>
+         </div>
 
-        <!-- Card Qr End -->
+        <!-- Off Canvas End -->
 
-        <!-- Short Informs Start -->
+        <!-- Heroes Header Start -->
 
-        <section class="short-inform">
+        <section class="d-flex heroes-header">
             <div class="container">
-                <div class="row row-cols-lg-2 row-cols-1">
-                    <div class="col">
-                        <h1>Sedikit Tentang Panggon Paseduluran</h1>
-                        <p>Panggon Paseduluran - Sebuah tempat bercengkerama dengan teman maupun pasangan yang mengusung tema tradisional yang sangat autentik disetiap sudut tempatnya. Bertempat di daerah kalasan Kabupaten Sleman, Panggon Paseduluran sendiri memiliki lingkungan yang masih asri disekitarnya, hal tersebut juga menambah tempat ini semakin autentik dengan ketradisionalannya.</p>
-                        <a href="#" class="btn btn-sm">Event Cafe</a>
-                        <a href="#" class="btn btn-sm">Informasi Cafe</a>
-                    </div>
-                    <div class="col">
+                <div class="row row-cols-lg-3">
+                    <div class="col-3 left-side">
+                        <i class="fa-solid fa-bars-staggered fa-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#Navigation"></i>
                         <div class="rect-1"></div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Short Informs End -->
-
-        <!-- Best Seller Start -->
-
-        <section class="best-seller">
-            <div class="container-fluid bg-seller">
-                <div class="container">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
+                    <div class="col-6 text-center center-side">
+                        <h1>Panggon Paseduluran</h1>
+                        <p>Hidup itu cuma mampir minum sisanya bersenda gurau</p>
+                    </div>
+                    <div class="col-3 right-side ms-auto">
+                        <div class="rect-1 ms-auto">
+                            <div class="content container">
+                                <img src="assets/image/coffee-cup.png" alt="" class="pt-4"> 
+                                <h2>Panggon Paseduluran</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Best Seller End -->
+        <!-- Heroes Header End -->
 
-        <!-- Footer Start -->
+        <!-- Heroes Content Start -->
 
-        <footer class="footer mt-auto py-3">
+        <section class="d-flex heroes-content">
             <div class="container">
-                <div class="footer-body">
-                    <div class="row row-cols-1 row-cols-lg-2">
-
+                <div class="row row-cols-lg-2">
+                    <div class="col-6 left-side">
+                        <h2>Panggon Paseduluran</h2>
+                        <p class="mt-5">Cafe yang berdiri di kalasan ini memberikan pengalaman baru bagi penikmat kopi di Daerah Istimewa Yogyakarta. Cafe ini mengangkat tema tradisional klasik jawa sehingga penikmat akan merasakan pengalaman yang berbeda ketika berada di cafe ini.</p>
+                        <a class="btn btn-sm" href="#">Lokasi<i class="fa-solid fa-location-arrow" style="margin-left: 10px;"></i></a>
+                    </div>
+                    <div class="col-6 right-side">
+                        <div class="group-box d-flex justify-content-end mb-2">
+                            <div class="rect-2 me-4"></div>
+                            <div class="rect-1"></div>
+                        </div>
+                        <div class="photo ms-auto"></div>
                     </div>
                 </div>
             </div>
-        </footer>
+        </section>
 
-        <!-- Footer end -->
+        <section class="d-flex heroes-content-2">
+            <div class="container">
+                <div class="row row-cols-lg-2">
+                    <div class="col-7 left-side">
+                        <div class="photo"></div>
+                    </div>
+                    <div class="col-5 right-side">
+                        <h2>Kepuasan kalian adalah rasa senang kami</h2>
+                        <p class="mt-5">Kopi yang disediakan di Cafe Panggon Paseduluran memiliki kualitas biji kopi yang tinggi. Berasal dari biji kopi pilihan terbaik dari indonesia menciptakan rasa nikmat saat kopi mulai di nikmati. Yuk kepoin Menu dari kami :D</p>
+                        <a class="btn btn-sm" href="">Menu<i class="fa-regular fa-file-lines" style="margin-left: 10px;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Js File -->
-        <script src="https://kit.fontawesome.com/25af777db1.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-   
-    </body>
-</html>
+        <section class="best-menu">
+            <div class="container">
+                <div class="menu-header px-5 mx-auto mb-5">
+                    <p>Menu Andalan</p>
+                    <h2>Panggon Paseduluran</h2>
+                </div>
+                <div class="menu-body d-flex justify-content-between">
+                    <div class="card mx-auto">
+                        <div class="photo-1"></div>
+                            <div class="d-flex justify-content-end">
+                                <p class="mt-2 fw-bold menu-title">Vietnam Drip</p>
+                            <div class="logo">
+                                <h1 class="mx-3 my-3">P<span>P</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mx-auto">
+                        <div class="photo-2"></div>
+                            <div class="d-flex justify-content-end">
+                                <p class="mt-2 fw-bold menu-title">Matcha Latte</p>
+                            <div class="logo">
+                                <h1 class="mx-3 my-3">P<span>P</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mx-auto">
+                        <div class="photo-3"></div>
+                            <div class="d-flex justify-content-end">
+                                <p class="mt-2 fw-bold menu-title">Wedhang Uwuh</p>
+                            <div class="logo">
+                                <h1 class="mx-3 my-3">P<span>P</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Heroes Content End -->
