@@ -7,6 +7,7 @@ class Dashboard extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('menu_data');
+		$this->load->library('pagination');
 		$this->load->helper(array('form', 'url'));
 	}
 
@@ -21,22 +22,27 @@ class Dashboard extends CI_Controller {
 
 	public function menu()
 	{
-		$config['base_url'] = site_url('admin/dashboard/menu');
-		$config['total_rows'] = $this->db->count_all('menu');
-		$config['per_page'] = 2;
-		$config['uri_segment'] = 3;
-		$choice = $config['total_rows'] / $config['per_page'];
-		$config['num_links'] = floor($choice);
+		// Pagination
+		$this->load->library('pagination');
 
+		// Config
+		$config['base_url'] = 'http://localhost:8080/Admin/Dashboard/menu';
+		$config['total_rows'] = $this->menu_data->countAllMenu();
+		$config['per_page'] = 5;
+
+		// Initialize
 		$this->pagination->initialize($config);
-		$data['page']	=	($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
 
 		$data['judul'] = 'Manage Menu - Panggon Paseduluran';
-		$data['show'] = $this->menu_data->show($config["per_page"], $data['page'])->result();
-		$data['pagination'] = $this->pagination->create_links(); 
+		$data['start'] = $this->uri->segment(4);
+		$data['show'] = $this->menu_data->show($config['per_page'], $data['start']);
 		$this->load->view('Admin/managemenu', $data);
 		$this->load->view('template/footer-admin');
+	}
+
+	public function countAllMenu()
+	{
+		return $this->db->get('menu')->num_rows();
 	}
 
 	public function addmenu()
@@ -62,5 +68,24 @@ class Dashboard extends CI_Controller {
 		$data['judul'] = 'Manage event - Panggon Paseduluran';
 		$this->load->view('Admin/manageevent', $data);
 		$this->load->view('template/footer-admin');
+	}
+
+	// Bagan Controller Activity
+
+	public function update(){
+		$harga = $this->input->post('harga');
+		$status = $this->input->post('status');
+		$ArrUpdate = Array(
+			'harga' => $harga,
+			'status' => $status,
+		);
+		$this->menu_data->update($ArrUpdate);
+		redirect('Admin/Dashboard/menu');
+	 }
+
+	public function delete($id)
+	{
+		$this->menu_data->deleteData($id);
+		redirect(base_url('Admin/Dashboard/menu'));
 	}
 }

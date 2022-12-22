@@ -67,15 +67,15 @@
                   <div class="card-body">
                     <div class="row row-cols-2">
                       <div class="col-7">
-                        <h5 class="card-title"><?php echo $s->nama ?></h5>
+                        <h5 class="card-title"><?php echo $s['nama']?></h5>
                         <h6 class="card-subtitle mb-2">Rp. 
-                          <?php echo $s->harga ?>
+                          <?php echo $s['harga']?>
                         </h6>
-                        <h6><?php echo $s->status?></h6>
+                        <h6><?php echo $s['status']?></h6>
                       </div>
                       <div class="col-5">
-                        <a href="">Edit Menu</a>
-                        <a href="">Hapus Menu</a>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#EditMenu">Edit Menu</button>
+                        <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/delete/'.$s['id']);?>">Hapus Menu</a>
                       </div>
                     </div>
                   </div>
@@ -84,7 +84,7 @@
             </div>
             <div class="row">
               <div class="col">
-                <?php echo $pagination;?>
+                <?php echo $this->pagination->create_links();?>
               </div>
             </div>
           </div>
@@ -92,7 +92,42 @@
 
         <!-- Main Content End -->
 
-        <!-- Modal Start -->
+        <!-- Modal Edit Menu Start -->
+
+        <div class="modal fade" id="EditMenu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Edit Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <form action="<?php echo base_url('Admin/Dashboard/update/'.$s['id'])?>" method="post">
+                <div class="modal-body">
+                  <div class="price mt-3">
+                    <label for="harga">Harga Menu</label><br>
+                    <input type="number" name="harga" id="harga">
+                  </div>
+                  <div class="status mt-3">
+                    <label for="status">Status Menu</label><br>
+                    <select name="status" id="status">
+                      <option selected>-- Pilih Status Menu --</option>
+                      <option value="Tersedia">Tersedia</option>
+                      <option value="Tidak Tersedia">Tidak Tersedia</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                  <button class="btn btn-primary">Tambah Menu</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Edit Menu End -->
+
+        <!-- Modal Add Menu Start -->
 
         <div class="modal fade" id="AddMenu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
           <div class="modal-dialog">
@@ -141,5 +176,5 @@
           </div>
         </div>
 
-        <!-- Modal End -->
+        <!-- Modal Add Menu End -->
       </div>
