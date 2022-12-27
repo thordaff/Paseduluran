@@ -38,6 +38,7 @@
           </div>
         </div>
         <!-- SideBar Navigation End -->
+
         <!-- Main Content Start -->
 
         <div class="main-content">
@@ -45,8 +46,48 @@
             <div class="main-title mt-4">
               <h2 class="ms-5">Manage Event</h2>
             </div>
-            <div class="main-body">
-
+            <div class="filter d-flex justify-content-end mt-3">
+              <div class="dropdown">
+                <button class="btn btn-sm dropdown-toggle" type="button" id="Kategori" data-bs-toggle="dropdown">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="Kategori">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+              <a href="<?php echo base_url();?>Admin/Dashboard/tambahevent" class="btn btn-sm me-4" type="button">
+                Tambah Menu
+              </a>
+            </div>
+            <div class="main-body ms-5">
+              <?php foreach($show as $s) :?>
+                <div class="card mt-3" style="width: 35rem;">
+                  <div class="card-body">
+                    <div class="row row-cols-2">
+                      <div class="col-7">
+                        <h5 class="card-title"><?php echo $s['judul']?></h5>
+                        <img src="<?php echo base_url().'/assets/img-event/'.$s['gambar']?>" alt="">
+                        <h6 class="card-subtitle mb-2"> 
+                          <?php echo $s['tag']?>
+                          <?php echo $s['tanggal']?>
+                        </h6>
+                        <h6><?php echo $s['isi']?></h6>
+                      </div>
+                      <div class="col-5">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#EditMenu<?php echo $s['id'];?>">Edit Menu</button>
+                        <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/deleteEvent/'.$s['id']);?>">Hapus Menu</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <?php endforeach; ?>
+            </div>
+            <div class="row">
+              <div class="col">
+                <?php echo $this->pagination->create_links();?>
+              </div>
             </div>
           </div>
         </div>

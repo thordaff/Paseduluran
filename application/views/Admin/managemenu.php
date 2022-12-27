@@ -74,8 +74,8 @@
                         <h6><?php echo $s['status']?></h6>
                       </div>
                       <div class="col-5">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#EditMenu">Edit Menu</button>
-                        <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/delete/'.$s['id']);?>">Hapus Menu</a>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#EditMenu<?php echo $s['id'];?>">Edit Menu</button>
+                        <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/deleteMenu/'.$s['id']);?>">Hapus Menu</a>
                       </div>
                     </div>
                   </div>
@@ -93,8 +93,9 @@
         <!-- Main Content End -->
 
         <!-- Modal Edit Menu Start -->
-
-        <div class="modal fade" id="EditMenu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        
+        <?php foreach($show as $s) :?>
+        <div class="modal fade" id="EditMenu<?php echo $s['id'];?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -103,13 +104,16 @@
               </div>
               <form action="<?php echo base_url('Admin/Dashboard/update/'.$s['id'])?>" method="post">
                 <div class="modal-body">
+                  <div class="id">
+                    <input type="hidden" name="id" id="id" value="<?php echo $s['id'];?>">
+                  </div>
                   <div class="price mt-3">
                     <label for="harga">Harga Menu</label><br>
-                    <input type="number" name="harga" id="harga">
+                    <input type="number" name="harga" id="harga" value="<?php echo $s['harga'];?>">
                   </div>
                   <div class="status mt-3">
                     <label for="status">Status Menu</label><br>
-                    <select name="status" id="status">
+                    <select name="status" id="status" value="Tersedia">
                       <option selected>-- Pilih Status Menu --</option>
                       <option value="Tersedia">Tersedia</option>
                       <option value="Tidak Tersedia">Tidak Tersedia</option>
@@ -124,6 +128,7 @@
             </div>
           </div>
         </div>
+        <?php endforeach; ?>
 
         <!-- Modal Edit Menu End -->
 

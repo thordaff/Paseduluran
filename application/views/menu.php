@@ -34,7 +34,7 @@
                                 <a class="nav-link text-dark" href="#">Event</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="#">Informasi</a>
+                                <a class="nav-link text-dark" href="<?php echo base_url();?>Informasi">Informasi</a>
                             </li>
                         </ul>
                     </div>

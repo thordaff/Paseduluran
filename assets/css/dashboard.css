@@ -7,8 +7,9 @@
 /* Sidebar */
 
 .sidebar {
-    width: 20em;
-    height: 100vh;
+    position: fixed;
+    width: 15em;
+    height: 200vh;
     background: #CE8147;
 }
 
@@ -54,7 +55,9 @@
 /* Main Content */
 
 .main-content{
-    width: 100%;
+    position: relative;
+    width: 80%;
+    left: 20%;
 
     border: 1px solid black;
 }

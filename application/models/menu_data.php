@@ -3,11 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Menu_data extends CI_Model {
     
-    function addmenu($data){ 
+    function addmenu($data)
+    { 
         $this->db->insert('menu', $data);
     }
 
-    function show($limit, $start){
+    function show($limit, $start)
+    {
         return $this->db->get('menu', $limit, $start)->result_array();
     }
 
@@ -16,6 +18,7 @@ class Menu_data extends CI_Model {
     }
 
     function update($data){
+        $this->db->where('id', $this->input->post('id'));
         $this->db->update('menu', $data);
       }
 
