@@ -29,7 +29,28 @@ class Dashboard extends CI_Controller {
 		// Config
 		$config['base_url'] = 'http://localhost:8080/Admin/Dashboard/menu';
 		$config['total_rows'] = $this->Menu_data->countAllMenu();
-		$config['per_page'] = 5;
+		$config['per_page'] = 6;
+
+		// Styling
+		$config['full_tag_open'] = '<nav"><ul class="pagination">';
+		$config['full_tag_close'] = '</ul></nav>';
+		
+		$config['next_link'] = '&raquo';
+		$config['next_tag_open'] = '<li class="page-item">';
+		$config['next_tag_close'] = '</li>';
+		
+		$config['prev_link'] = '&laquo';
+		$config['prev_tag_open'] = '<li class="page-item">';
+		$config['prev_tag_close'] = '</li>';
+		
+		$config['cur_tag_open'] = '<li class="page-item active">';
+		$config['cur_tag_close'] = '</li>';
+		
+		$config['num_tag_open'] = '<li class="page-item">';
+		$config['num_tag_close'] = '</li>';
+
+		$config['attributes'] = array('class' => 'page-link');
+
 
 		// Initialize
 		$this->pagination->initialize($config);
@@ -74,6 +95,26 @@ class Dashboard extends CI_Controller {
 		$config['total_rows'] = $this->Event_data->countAllEvent();
 		$config['per_page'] = 5;
 
+		// Styling
+		$config['full_tag_open'] = '<nav"><ul class="pagination">';
+		$config['full_tag_close'] = '</ul></nav>';
+		
+		$config['next_link'] = '&raquo';
+		$config['next_tag_open'] = '<li class="page-item">';
+		$config['next_tag_close'] = '</li>';
+		
+		$config['prev_link'] = '&laquo';
+		$config['prev_tag_open'] = '<li class="page-item">';
+		$config['prev_tag_close'] = '</li>';
+		
+		$config['cur_tag_open'] = '<li class="page-item active">';
+		$config['cur_tag_close'] = '</li>';
+		
+		$config['num_tag_open'] = '<li class="page-item">';
+		$config['num_tag_close'] = '</li>';
+
+		$config['attributes'] = array('class' => 'page-link');
+
 		// Initialize
 		$this->pagination->initialize($config);
 
@@ -92,10 +133,6 @@ class Dashboard extends CI_Controller {
 	public function addevent()
 	{
 		// Upload 
-		$judul = $this->input->post('judul');
-		$tanggal = $this->input->post('tanggal');
-		$tag = $this->input->post('tag');
-		$isi = $this->input->post('isi_event');
 		if ($gambar=''){}else{
 			$config['upload_path'] = './assets/img-event';
 			$config['allowed_types'] = 'jpg|png';
@@ -104,19 +141,20 @@ class Dashboard extends CI_Controller {
 			if (!$this->upload->do_upload('gambar')){
 				echo "Error uploading"; die();
 			}else{
+				$judul = $this->input->post('judul');
 				$gambar=$this->upload->data('file_name');
+				$tanggal = $this->input->post('tanggal');
+				$isi = $this->input->post('isi');
 			}
+			$ArrInsert = Array(
+				'judul' => $judul,
+				'gambar' => $gambar,
+				'tanggal' => $tanggal,
+				'isi' => $isi,
+			);
+			$this->Event_data->addEvent($ArrInsert);
+			Redirect(Base_url('Admin/Dashboard/event'));
 		}
-
-		$ArrInsert = Array(
-			'judul' => $judul,
-			'gambar' => $gambar,
-			'tanggal' => $tanggal,
-			'tag' => $tag,
-			'isi' => $isi,
-		);
-		$this->Event_data->addEvent($ArrInsert);
-		Redirect(Base_url('Admin/Dashboard/event'));
 	}
 
 	// Bagan Controller Activity
@@ -131,21 +169,29 @@ class Dashboard extends CI_Controller {
 		redirect('Admin/Dashboard/menu');
 	 }
 
-	public function deleteMenu($id)
-	{
-		$this->Menu_data->deleteData($id);
-		redirect(base_url('Admin/Dashboard/menu'));
-	}
+	public function updateEvent($id){
+		$id = $this->input->post('id');
+			if ($gambar=''){}else{
+			$config['upload_path'] = './assets/img-event';
+			$config['allowed_types'] = 'jpg|png';
 
-	public function updateEvent(){
-		$data = Array(
-			'judul' => $judul,
-			'gambar' => $gambar,
-			'tanggal' => $tanggal,
-			'tag' => $tag,
-			'isi' => $isi,
-		);
-		$this->Event_data->updateEvent($data);
+			$this->load->library('upload',$config);
+			if (!$this->upload->do_upload('gambar')){
+				$data = [
+					"judul" => $this->input->post('judul'),
+					"tanggal" => $this->input->post('tanggal'),
+					"isi" => $this->input->post('isi'),
+				];
+			}else{
+				$data = [
+					"judul" => $this->input->post('judul'),
+					"gambar" => $this->upload->data('file_name'),
+					"tanggal" => $this->input->post('tanggal'),
+					"isi" => $this->input->post('isi'),
+				];
+			}
+		}
+		$this->Event_data->updateEvent($data, $id);
 		Redirect(Base_url('Admin/Dashboard/event'));
 	}
 
@@ -160,4 +206,11 @@ class Dashboard extends CI_Controller {
 		$this->Event_data->deleteData($id);
 		redirect(base_url('Admin/Dashboard/event'));
 	}
+
+	public function deleteMenu($id)
+	{
+		$this->Menu_data->deleteData($id);
+		redirect(base_url('Admin/Dashboard/menu'));
+	}
+
 }

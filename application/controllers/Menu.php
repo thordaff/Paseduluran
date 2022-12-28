@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Menu extends CI_Controller {
 
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->model('MenuFilter');
+	}
+
 	public function index()
 	{
 		$this->load->view('menu');
@@ -11,6 +17,7 @@ class Menu extends CI_Controller {
 
 	public function fullmenu()
 	{
-		$this->load->view('full-menu');
+		$data['showC'] = $this->MenuFilter->coffee();
+		$this->load->view('full-menu',$data);
 	}
 }

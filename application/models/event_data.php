@@ -14,10 +14,10 @@ class Event_data extends CI_Model {
     }
 
     function edit(){
-        return $this->db->get('event');
+        return $this->db->get('event')->result_array();
     }
 
-    function update($data){
+    function updateEvent($data){
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('event', $data);
     }

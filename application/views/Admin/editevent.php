@@ -6,34 +6,21 @@
     <script src="/assets/vendor/ckeditor/ckeditor.js"></script>
 </head>
     <body>
+    <?php foreach($show as $s) :?>
         <div class="container">
-            <?php echo form_open_multipart('Admin/Dashboard/updateEvent');?>
+            <form action="<?php echo base_url('Admin/Dashboard/updateEvent/'.$s['id'])?>" method="post">
+                <div class="id">
+                    <input type="hidden" name="id" id="id">
+                </div>
                 <div class="title">
                     <label for="judul">Judul Event</label><br>
-                    <input type="text" name="judul" id="judul">
-                </div>
-                <div class="img-event">
-                    <label for="img">Image</label><br>
-                    <input type="file" name="gambar" id="gambar">
-                </div>
-                <div class="tanggal">
-                    <label for="tanggal">Tanggal Event</label><br>
-                    <input type="date" name="tanggal" id="tanggal">
-                </div>
-                <div class="tag">
-                    <label for="tag">Tag Event</label><br>
-                    <input type="text" name="tag" id="tag">
-                </div>
-                <div class="content">
-                    <textarea name="isi_event" id="isi_event" ></textarea>
-                    <script>
-                        CKEDITOR.replace( 'isi_event' );
-                    </script>
+                    <input type="text" name="judul" id="judul" value="<?php echo $s['judul']?>">
                 </div>
                 <div class="button">
                     <button>Simpan</button>
                 </div>
             </form>
         </div>
+    <?php endforeach; ?>
     </body>
 </html>

@@ -62,25 +62,27 @@
               </button>
             </div>
             <div class="main-body ms-5">
-              <?php foreach($show as $s) :?>
-                <div class="card mt-3" style="width: 35rem;">
-                  <div class="card-body">
-                    <div class="row row-cols-2">
-                      <div class="col-7">
-                        <h5 class="card-title"><?php echo $s['nama']?></h5>
-                        <h6 class="card-subtitle mb-2">Rp. 
-                          <?php echo $s['harga']?>
-                        </h6>
-                        <h6><?php echo $s['status']?></h6>
-                      </div>
-                      <div class="col-5">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#EditMenu<?php echo $s['id'];?>">Edit Menu</button>
-                        <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/deleteMenu/'.$s['id']);?>">Hapus Menu</a>
+              <div class="d-flex flex-wrap">
+                <?php foreach($show as $s) :?>
+                    <div class="card mt-3 me-5" style="width: 25rem;">
+                      <div class="card-body">
+                        <div class="row row-cols-2">
+                          <div class="col-7">
+                            <h5 class="card-title"><?php echo $s['nama']?></h5>
+                            <h6 class="card-subtitle mb-2">Rp. 
+                              <?php echo $s['harga']?>
+                            </h6>
+                            <h6><?php echo $s['status']?></h6>
+                          </div>
+                          <div class="col-5">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#EditMenu<?php echo $s['id'];?>">Edit Menu</button>
+                            <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/deleteMenu/'.$s['id']);?>">Hapus Menu</a>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  <?php endforeach; ?>
                 </div>
-              <?php endforeach; ?>
             </div>
             <div class="row">
               <div class="col">

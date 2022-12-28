@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/assets/css/dashboard.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <!-- JS File -->
+    <script src="/assets/vendor/ckeditor/ckeditor.js"></script>
+
     <title><?php echo $judul ?></title>
   </head>
     <body>
@@ -57,9 +60,9 @@
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
               </div>
-              <a href="<?php echo base_url();?>Admin/Dashboard/tambahevent" class="btn btn-sm me-4" type="button">
-                Tambah Menu
-              </a>
+              <button class="btn btn-sm me-4" type="button" data-bs-toggle="modal" data-bs-target="#AddEvent">
+                Tambah Event
+              </button>
             </div>
             <div class="main-body ms-5">
               <?php foreach($show as $s) :?>
@@ -70,13 +73,12 @@
                         <h5 class="card-title"><?php echo $s['judul']?></h5>
                         <img src="<?php echo base_url().'/assets/img-event/'.$s['gambar']?>" alt="">
                         <h6 class="card-subtitle mb-2"> 
-                          <?php echo $s['tag']?>
                           <?php echo $s['tanggal']?>
                         </h6>
                         <h6><?php echo $s['isi']?></h6>
                       </div>
                       <div class="col-5">
-                        <a href="<?php echo base_url('Admin/Dashboard/editEvent/'.$s['id'])?>" type="button">Edit Menu</a>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#editEvent<?php echo $s['id'];?>">Edit Menu</button>
                         <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/deleteEvent/'.$s['id']);?>">Hapus Menu</a>
                       </div>
                     </div>
@@ -93,4 +95,93 @@
         </div>
 
         <!-- Main Content End -->
+
+        <!-- Modal Add Event Start -->
+
+        <div class="modal fade" id="AddEvent" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Tambah event</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <?php echo form_open_multipart('Admin/Dashboard/addevent');?>
+                <div class="modal-body">
+                  <div class="name">
+                    <label for="judul">Judul Event</label><br>
+                    <input type="text" name="judul" id="judul">
+                  </div>
+                  <div class="img mt-3">
+                    <label for="gambar">Gambar Event</label><br>
+                    <input type="file" name="gambar" id="gambar">
+                  </div>
+                  <div class="tanggal mt-3">
+                    <label for="tanggal">Tanggal Menu</label><br>
+                    <input type="date" name="tanggal" id="tanggal">
+                  </div>
+                  <div class="isi mt-3">
+                    <label for="isi">Isi Event</label><br>
+                    <textarea name="isi" id="isi" ></textarea>
+                    <script>
+                        CKEDITOR.replace( 'isi' );
+                    </script>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                  <button class="btn btn-primary">Tambah Menu</button>
+                </div>
+              <?php echo form_close()?>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Add Event End -->
+
+         <!-- Modal Edit Event Start -->
+
+         <?php foreach($show as $s) :?>
+         <div class="modal fade" id="editEvent<?php echo $s['id'];?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Edit Event</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <?php echo form_open_multipart('Admin/Dashboard/updateEvent/'.$s['id']);?>
+                <div class="modal-body">
+                <div class="id">
+                    <input type="hidden" name="id" id="id" value="<?php echo $s['id']?>">
+                  </div>
+                  <div class="name">
+                    <label for="judul">Judul Event</label><br>
+                    <input type="text" name="judul" id="judul" value="<?php echo $s['judul']?>">
+                  </div>
+                  <div class="img mt-3">
+                    <label for="gambar">Gambar Event</label><br>
+                    <input type="file" name="gambar" id="gambar">
+                  </div>
+                  <div class="tanggal mt-3">
+                    <label for="tanggal">Tanggal Menu</label><br>
+                    <input type="date" name="tanggal" id="tanggal" value="<?php echo $s['tanggal']?>">
+                  </div>
+                  <div class="isi mt-3">
+                    <label for="isi">Isi Event</label><br>
+                    <textarea name="isi" id="isi_event"></textarea>
+                    <script>
+                        CKEDITOR.replace( 'isi_event' );
+                    </script>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                  <button class="btn btn-primary">Tambah Menu</button>
+                </div>
+              <?php echo form_close()?>
+            </div>
+          </div>
+        </div>
+        <?php endforeach; ?>
+
+        <!-- Modal Edit Event End -->
       </div>

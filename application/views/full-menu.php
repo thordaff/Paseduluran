@@ -50,10 +50,6 @@
             <div class="d-flex justify-content-start">
                 <div class="container">
                     <div class="full-title">
-                        <div class="col-3 left-side">
-                            <i class="fa-solid fa-bars-staggered fa-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#Navigation"></i>
-                            <div class="rect-1"></div>
-                        </div>
                         <h2 class="fw-bold text-center">Cafe Menu</h2>
                         <div class="desc">
                             <div class="open mx-auto text-center">
@@ -71,24 +67,14 @@
                             </div>
                             <div class="menu-body mt-3 d-flex flex-column">
                                 <div class="coffee-based">
+                                    <?php foreach($showC as $s):?>
                                     <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">Espresso</h6>
-                                        <p>8K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">
-                                            Americano
-                                            <p class="fw-light desc">Hot // Ice</p>
+                                        <h6 class="fw-bold"><?php echo $s['nama']?>
+                                            <p class="fw-light desc"><?php echo $s['pilihan']?></p>
                                         </h6>
-                                        <p>13K</p>
+                                        <p>Rp. <?php echo number_format($s['harga'])?></p>
                                     </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">
-                                            Capuccino
-                                            <p class="fw-light desc">Hot // Ice</p>
-                                        </h6>
-                                        <p>18K</p>
-                                    </div>
+                                    <?php endforeach;?>
                                 </div>
                             </div>
                             <div class="menu-title d-flex justify-content-around">

@@ -71,9 +71,60 @@
 
         <!-- Heroes Header End -->
 
+        <!-- Section Event Start -->
+
+        <section class="mt-5 py-5">
+            <div class="d-flex event-content">
+                <div class="container">
+                    <?php foreach($show as $s):?>
+                    <div class="card mt-3 pt-2">
+                        <div class="row row-cols-2">
+                            <div class="col-2">
+                                <div class="card-img">
+                                    <img src="<?php echo base_url() . '/assets/img-event/' .  $s['gambar']?>" width="150">
+                                </div>
+                            </div>
+                            <div class="col-10">
+                                <div class="card-title">
+                                    <h5><?php echo $s['judul']?></h5>
+                                    <p><?php echo $s['tanggal']?></p>
+                                </div>
+                                <div class="card-body">
+                                   <p><?php echo substr($s['isi'],0, 150);?></p>
+                                   <a type="button" data-bs-toggle="modal" data-bs-target="#moreIsi<?php echo $s['id'];?>">Baca Selengkapnya</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach;?>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Section Event End -->
+
+        <!-- Modal Read More Start -->
+
+        <!-- Modal Edit Event Start -->
+
         <?php foreach($show as $s) :?>
-            asda
-            <h1><?php echo $s['judul']?></h1>
-            <p><?php echo $s['tanggal']?></p>
-            <p><?php echo $s['isi']?></p>
-        <?php endforeach;?>
+         <div class="modal fade" id="moreIsi<?php echo $s['id'];?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><?php echo $s['judul']?></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+                <div class="modal-body">
+                    <img src="<?php echo base_url() . '/assets/img-event/' .  $s['gambar']?>" width="150">
+                    <p><?php echo $s['isi']?></p>
+                    <p><?php echo $s['tanggal']?></p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <?php endforeach; ?>
+
+        <!-- Modal Read More End -->
