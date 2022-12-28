@@ -13,6 +13,15 @@ class Event_data extends CI_Model {
         return $this->db->get('event', $limit, $start)->result_array();
     }
 
+    function edit(){
+        return $this->db->get('event');
+    }
+
+    function update($data){
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('event', $data);
+    }
+    
     function countAllEvent(){
         return $this->db->get('event')->num_rows();
     }

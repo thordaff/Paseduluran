@@ -13,12 +13,47 @@
   </head>
     <body>
 
+        <!-- Off Canvas Start -->
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="Navigation" aria-labelledby="offcanvasExampleLabel">
+            <div class="container">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="NavigationLabel">Panggon Paseduluran</h5>
+                    <i class="fa-solid fa-xmark text-reset" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></i>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="nav">
+                        <ul class="navbar-nav" id="Nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark active" href="<?php echo base_url();?>Beranda">Beranda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="<?php echo base_url();?>Menu">Menu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#">Event</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="<?php echo base_url();?>Informasi">Informasi</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+        <!-- Off Canvas End -->
+
         <!-- Full Menu Start -->
 
         <seciton class="full-menu">
             <div class="d-flex justify-content-start">
                 <div class="container">
                     <div class="full-title">
+                        <div class="col-3 left-side">
+                            <i class="fa-solid fa-bars-staggered fa-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#Navigation"></i>
+                            <div class="rect-1"></div>
+                        </div>
                         <h2 class="fw-bold text-center">Cafe Menu</h2>
                         <div class="desc">
                             <div class="open mx-auto text-center">

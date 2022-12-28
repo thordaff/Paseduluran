@@ -76,7 +76,7 @@
                         <h6><?php echo $s['isi']?></h6>
                       </div>
                       <div class="col-5">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#EditMenu<?php echo $s['id'];?>">Edit Menu</button>
+                        <a href="<?php echo base_url('Admin/Dashboard/editEvent/'.$s['id'])?>" type="button">Edit Menu</a>
                         <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/deleteEvent/'.$s['id']);?>">Hapus Menu</a>
                       </div>
                     </div>

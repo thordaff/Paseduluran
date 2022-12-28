@@ -6,8 +6,8 @@ class Dashboard extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('menu_data');
-		$this->load->model('event_data');
+		$this->load->model('Menu_data');
+		$this->load->model('Event_data');
 		$this->load->library('pagination');
 		$this->load->helper(array('form', 'url'));
 	}
@@ -28,7 +28,7 @@ class Dashboard extends CI_Controller {
 
 		// Config
 		$config['base_url'] = 'http://localhost:8080/Admin/Dashboard/menu';
-		$config['total_rows'] = $this->menu_data->countAllMenu();
+		$config['total_rows'] = $this->Menu_data->countAllMenu();
 		$config['per_page'] = 5;
 
 		// Initialize
@@ -36,7 +36,7 @@ class Dashboard extends CI_Controller {
 
 		$data['judul'] = 'Manage Menu - Panggon Paseduluran';
 		$data['start'] = $this->uri->segment(4);
-		$data['show'] = $this->menu_data->show($config['per_page'], $data['start']);
+		$data['show'] = $this->Menu_data->show($config['per_page'], $data['start']);
 		$this->load->view('Admin/managemenu', $data);
 		$this->load->view('template/footer-admin');
 	}
@@ -58,7 +58,7 @@ class Dashboard extends CI_Controller {
 			'harga' => $harga,
 			'status' => $status,
 		);
-		$this->menu_data->addmenu($ArrInsert);
+		$this->Menu_data->addmenu($ArrInsert);
 		Redirect(Base_url('Admin/Dashboard/menu'));
 	}
 
@@ -71,7 +71,7 @@ class Dashboard extends CI_Controller {
 
 		// Config
 		$config['base_url'] = 'http://localhost:8080/Admin/Dashboard/event';
-		$config['total_rows'] = $this->event_data->countAllEvent();
+		$config['total_rows'] = $this->Event_data->countAllEvent();
 		$config['per_page'] = 5;
 
 		// Initialize
@@ -79,7 +79,7 @@ class Dashboard extends CI_Controller {
 
 		$data['judul'] = 'Manage event - Panggon Paseduluran';
 		$data['start'] = $this->uri->segment(4);
-		$data['show'] = $this->event_data->show($config['per_page'], $data['start']);
+		$data['show'] = $this->Event_data->show($config['per_page'], $data['start']);
 		$this->load->view('Admin/manageevent', $data);
 		$this->load->view('template/footer-admin');
 	}
@@ -115,35 +115,49 @@ class Dashboard extends CI_Controller {
 			'tag' => $tag,
 			'isi' => $isi,
 		);
-		$this->event_data->addEvent($ArrInsert);
+		$this->Event_data->addEvent($ArrInsert);
 		Redirect(Base_url('Admin/Dashboard/event'));
-	}
-
-	public function editevent()
-	{
-		$this->load->view('Admin/editevent');
 	}
 
 	// Bagan Controller Activity
 
 	public function update($id){
 		$data = [
+            "nama" => $this->input->post('nama'),
             "harga" => $this->input->post('harga'),
             "status" => $this->input->post('status'),
         ];
-		$this->menu_data->update($data, $id);
+		$this->Menu_data->update($data, $id);
 		redirect('Admin/Dashboard/menu');
 	 }
 
 	public function deleteMenu($id)
 	{
-		$this->menu_data->deleteData($id);
+		$this->Menu_data->deleteData($id);
 		redirect(base_url('Admin/Dashboard/menu'));
+	}
+
+	public function updateEvent(){
+		$data = Array(
+			'judul' => $judul,
+			'gambar' => $gambar,
+			'tanggal' => $tanggal,
+			'tag' => $tag,
+			'isi' => $isi,
+		);
+		$this->Event_data->updateEvent($data);
+		Redirect(Base_url('Admin/Dashboard/event'));
+	}
+
+	public function editEvent()
+	{
+		$data['show'] = $this->Event_data->edit();
+		$this->load->view('Admin/editevent', $data);
 	}
 
 	public function deleteEvent($id)
 	{
-		$this->event_data->deleteData($id);
+		$this->Event_data->deleteData($id);
 		redirect(base_url('Admin/Dashboard/event'));
 	}
 }

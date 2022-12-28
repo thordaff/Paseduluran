@@ -107,6 +107,22 @@
                   <div class="id">
                     <input type="hidden" name="id" id="id" value="<?php echo $s['id'];?>">
                   </div>
+                  <div class="name">
+                    <label for="nama">Nama Menu</label><br>
+                    <input type="text" name="nama" id="nama" value="<?php echo $s['nama']?>">
+                  </div>
+                  <div class="category mt-3">
+                    <label for="kategori">Kategori</label><br>
+                    <select name="kategori" id="kategori">
+                      <option selected> <?php echo $s['kategori']?></option>
+                      <option value="Manual Brew">Manual Brew</option>
+						          <option value="Coffee">Coffee</option>
+						          <option value="Latte">Latte</option>
+						          <option value="Tea Based">Tea Based</option>
+						          <option value="Traditional Drink">Traditional Drink</option>
+						          <option value="Food">Food</option>
+                    </select>
+                  </div>
                   <div class="price mt-3">
                     <label for="harga">Harga Menu</label><br>
                     <input type="number" name="harga" id="harga" value="<?php echo $s['harga'];?>">

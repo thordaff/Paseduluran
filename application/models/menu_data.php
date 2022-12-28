@@ -25,5 +25,4 @@ class Menu_data extends CI_Model {
     function deleteData($id){
         return $this->db->delete('menu', array('id' => $id));
     }
-
 }
