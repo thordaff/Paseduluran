@@ -113,6 +113,10 @@
                     <label for="nama">Nama Menu</label><br>
                     <input type="text" name="nama" id="nama" value="<?php echo $s['nama']?>">
                   </div>
+                  <div class="choose">
+                    <label for="pilihan">Hot // Ice ?</label>
+                    <input type="checkbox" name="pilihan" id="pilihan" value="Hot // Ice">
+                  </div>
                   <div class="category mt-3">
                     <label for="kategori">Kategori</label><br>
                     <select name="kategori" id="kategori">

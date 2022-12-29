@@ -18,6 +18,7 @@ class Menu extends CI_Controller {
 	public function fullmenu()
 	{
 		$data['showC'] = $this->MenuFilter->coffee();
+		$data['showL'] = $this->MenuFilter->latte();
 		$this->load->view('full-menu',$data);
 	}
 }

@@ -6,4 +6,8 @@ class MenuFilter extends CI_Model {
     function coffee(){
         return $this->db->get_where('menu', ['kategori'=>'Coffee'])->result_array();
     }
+
+    function latte(){
+        return $this->db->get_where('menu', ['kategori'=>'Coffee'])->result_array();
+    }
 }

@@ -162,6 +162,7 @@ class Dashboard extends CI_Controller {
 	public function update($id){
 		$data = [
             "nama" => $this->input->post('nama'),
+            "pilihan" => $this->input->post('pilihan'),
             "harga" => $this->input->post('harga'),
             "status" => $this->input->post('status'),
         ];
