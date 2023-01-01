@@ -17,24 +17,27 @@
         <div class="sidebar">
           <div class="container position-fixed">
             <div class="side-title mt-4 ms-3">
-                <h4>Panggon Paseduluran</h4>
-              </div>
-              <div class="side-body mt-5 ms-3 pt-5">
-                <ul class="navbar-nav py-4" id="SideNav">
-                  <li class="nav-item">
-                    <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-gauge" style="margin-right: 10px;"></i>dashboard</a>
-                  </li>
-                  <li class="nav-item">
-                    <a type="button" class="nav-link active" href="<?php echo base_url();?>Admin/Dashboard/menu" class="nav-link"><i class="fa-solid fa-clipboard" style="margin-right: 10px;"></i>Manage Menu</a>
-                  </li>
-                  <li class="nav-item">
-                    <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard/event"><i class="fa-regular fa-calendar-minus" style="margin-right: 10px;"></i>Manage Event</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="side-footer ms-3">
-                <a href="<?php echo base_url('Auth/Logout')?>">Log Out</a>
-              </div>
+              <h4>Panggon Paseduluran</h4>
+            </div>
+            <div class="side-body mt-5 ms-3 pt-5">
+              <ul class="navbar-nav py-4" id="SideNav">
+                <li class="nav-item">
+                  <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-gauge" style="margin-right: 10px;"></i>dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-list" style="margin-right: 10px;"></i>Kategori</a>
+                </li>
+                <li class="nav-item">
+                  <a type="button" class="nav-link active-side" href="<?php echo base_url();?>Admin/Dashboard/menu" class="nav-link"><i class="fa-solid fa-clipboard" style="margin-right: 10px;"></i>Manage Menu</a>
+                </li>
+                <li class="nav-item">
+                  <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard/event"><i class="fa-regular fa-calendar-minus" style="margin-right: 10px;"></i>Manage Event</a>
+                </li>
+              </ul>
+            </div>
+            <div class="side-footer mt-5 pt-4">
+              <a href="<?php echo base_url('Auth/Logout')?>">Log Out</a>
+            </div>
           </div>
         </div>
         <!-- SideBar Navigation End -->
@@ -49,15 +52,19 @@
             <div class="filter d-flex justify-content-end mt-3">
               <div class="dropdown">
                 <button class="btn btn-sm dropdown-toggle" type="button" id="Kategori" data-bs-toggle="dropdown">
-                  Dropdown button
+                  Filter Kategori
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="Kategori">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Manual Brew</a></li>
+                  <li><a class="dropdown-item" href="#">Coffee</a></li>
+                  <li><a class="dropdown-item" href="#">Latte</a></li>
+                  <li><a class="dropdown-item" href="#">Tea Based</a></li>
+                  <li><a class="dropdown-item" href="#">Traditional Drink</a></li>
+                  <li><a class="dropdown-item" href="#">Food</a></li>
                 </ul>
               </div>
               <button class="btn btn-sm me-4" type="button" data-bs-toggle="modal" data-bs-target="#AddMenu">
+                <i class="fa-solid fa-plus"></i>
                 Tambah Menu
               </button>
             </div>
@@ -68,15 +75,30 @@
                       <div class="card-body">
                         <div class="row row-cols-2">
                           <div class="col-7">
-                            <h5 class="card-title"><?php echo $s['nama']?></h5>
-                            <h6 class="card-subtitle mb-2">Rp. 
-                              <?php echo $s['harga']?>
-                            </h6>
-                            <h6><?php echo $s['status']?></h6>
+                            <h5><?php echo $s['nama']?></h5>
+                            <table>
+                              <tr>
+                                <td>Kategori</td>
+                                <td> : </td>
+                                <td><?php echo $s['kategori']?></td>
+                              </tr>
+                              <tr>
+                                <td>Harga</td>
+                                <td> : </td>
+                                <td>Rp. <?php echo number_format($s['harga'])?></td>
+                              </tr>
+                              <tr>
+                                <td>Status</td>
+                                <td> : </td>
+                                <td><?php echo $s['status']?></td>
+                              </tr>
+                            </table>
                           </div>
                           <div class="col-5">
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#EditMenu<?php echo $s['id'];?>">Edit Menu</button>
-                            <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/deleteMenu/'.$s['id']);?>">Hapus Menu</a>
+                            <div class="control ms-auto">
+                              <a type="button" data-bs-toggle="modal" data-bs-target="#EditMenu<?php echo $s['id'];?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                              <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/deleteMenu/'.$s['id']);?>"><i class="fa-solid fa-trash trash"></i></a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -84,7 +106,7 @@
                   <?php endforeach; ?>
                 </div>
             </div>
-            <div class="row">
+            <div class="row pt-5">
               <div class="col">
                 <?php echo $this->pagination->create_links();?>
               </div>
@@ -144,7 +166,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="reset" class="btn btn-secondary">Reset</button>
-                  <button class="btn btn-primary">Tambah Menu</button>
+                  <button class="btn btn-primary">Edit Menu</button>
                 </div>
               </form>
             </div>

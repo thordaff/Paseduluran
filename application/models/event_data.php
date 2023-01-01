@@ -13,6 +13,11 @@ class Event_data extends CI_Model {
         return $this->db->get('event', $limit, $start)->result_array();
     }
 
+    function showUser()
+    {
+        return $this->db->get('event')->result_array();
+    }
+
     function edit(){
         return $this->db->get('event')->result_array();
     }

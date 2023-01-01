@@ -27,12 +27,12 @@ class Dashboard extends CI_Controller {
 		$this->load->library('pagination');
 
 		// Config
-		$config['base_url'] = 'http://localhost:8080/Admin/Dashboard/menu';
+		$config['base_url'] = 'https://cd1d-139-0-45-17.ap.ngrok.io/Admin/Dashboard/menu';
 		$config['total_rows'] = $this->Menu_data->countAllMenu();
 		$config['per_page'] = 6;
 
 		// Styling
-		$config['full_tag_open'] = '<nav"><ul class="pagination">';
+		$config['full_tag_open'] = '<nav><ul class="pagination">';
 		$config['full_tag_close'] = '</ul></nav>';
 		
 		$config['next_link'] = '&raquo';
@@ -91,7 +91,7 @@ class Dashboard extends CI_Controller {
 		$this->load->library('pagination');
 
 		// Config
-		$config['base_url'] = 'http://localhost:8080/Admin/Dashboard/event';
+		$config['base_url'] = 'https://cd1d-139-0-45-17.ap.ngrok.io/Admin/Dashboard/event';
 		$config['total_rows'] = $this->Event_data->countAllEvent();
 		$config['per_page'] = 5;
 

@@ -36,6 +36,9 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" href="<?php echo base_url();?>Informasi">Informasi</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="<?php echo base_url();?>Auth/login">Login</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

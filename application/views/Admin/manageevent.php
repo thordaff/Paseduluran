@@ -20,24 +20,27 @@
         <div class="sidebar">
           <div class="container position-fixed">
             <div class="side-title mt-4 ms-3">
-                <h4>Panggon Paseduluran</h4>
-              </div>
-              <div class="side-body mt-5 ms-3 pt-5">
-                <ul class="navbar-nav py-4" id="SideNav">
-                  <li class="nav-item">
-                    <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-gauge" style="margin-right: 10px;"></i>dashboard</a>
-                  </li>
-                  <li class="nav-item">
-                    <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard/menu" class="nav-link"><i class="fa-solid fa-clipboard" style="margin-right: 10px;"></i>Manage Menu</a>
-                  </li>
-                  <li class="nav-item">
-                    <a type="button" class="nav-link active" href="<?php echo base_url();?>Admin/Dashboard/event"><i class="fa-regular fa-calendar-minus" style="margin-right: 10px;"></i>Manage Event</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="side-footer ms-3">
-                <a href="<?php echo base_url('Auth/Logout')?>">Log Out</a>
-              </div>
+              <h4>Panggon Paseduluran</h4>
+            </div>
+            <div class="side-body mt-5 ms-3 pt-5">
+              <ul class="navbar-nav py-4" id="SideNav">
+                <li class="nav-item">
+                  <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-gauge" style="margin-right: 10px;"></i>dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-list" style="margin-right: 10px;"></i>Kategori</a>
+                </li>
+                <li class="nav-item">
+                  <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard/menu" class="nav-link"><i class="fa-solid fa-clipboard" style="margin-right: 10px;"></i>Manage Menu</a>
+                </li>
+                <li class="nav-item">
+                  <a type="button" class="nav-link active-side" href="<?php echo base_url();?>Admin/Dashboard/event"><i class="fa-regular fa-calendar-minus" style="margin-right: 10px;"></i>Manage Event</a>
+                </li>
+              </ul>
+            </div>
+            <div class="side-footer mt-5 pt-4">
+              <a href="<?php echo base_url('Auth/Logout')?>">Log Out</a>
+            </div>
           </div>
         </div>
         <!-- SideBar Navigation End -->
@@ -50,16 +53,6 @@
               <h2 class="ms-5">Manage Event</h2>
             </div>
             <div class="filter d-flex justify-content-end mt-3">
-              <div class="dropdown">
-                <button class="btn btn-sm dropdown-toggle" type="button" id="Kategori" data-bs-toggle="dropdown">
-                  Dropdown button
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="Kategori">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </div>
               <button class="btn btn-sm me-4" type="button" data-bs-toggle="modal" data-bs-target="#AddEvent">
                 Tambah Event
               </button>
@@ -78,8 +71,8 @@
                         <h6><?php echo $s['isi']?></h6>
                       </div>
                       <div class="col-5">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#editEvent<?php echo $s['id'];?>">Edit Menu</button>
-                        <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/deleteEvent/'.$s['id']);?>">Hapus Menu</a>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#editEvent<?php echo $s['id'];?>">Edit Event</button>
+                        <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/deleteEvent/'.$s['id']);?>">Hapus Event</a>
                       </div>
                     </div>
                   </div>
@@ -116,7 +109,7 @@
                     <input type="file" name="gambar" id="gambar">
                   </div>
                   <div class="tanggal mt-3">
-                    <label for="tanggal">Tanggal Menu</label><br>
+                    <label for="tanggal">Tanggal Event</label><br>
                     <input type="date" name="tanggal" id="tanggal">
                   </div>
                   <div class="isi mt-3">
@@ -129,7 +122,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="reset" class="btn btn-secondary">Reset</button>
-                  <button class="btn btn-primary">Tambah Menu</button>
+                  <button class="btn btn-primary">Tambah Event</button>
                 </div>
               <?php echo form_close()?>
             </div>
@@ -162,7 +155,7 @@
                     <input type="file" name="gambar" id="gambar">
                   </div>
                   <div class="tanggal mt-3">
-                    <label for="tanggal">Tanggal Menu</label><br>
+                    <label for="tanggal">Tanggal Event</label><br>
                     <input type="date" name="tanggal" id="tanggal" value="<?php echo $s['tanggal']?>">
                   </div>
                   <div class="isi mt-3">
@@ -175,7 +168,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="reset" class="btn btn-secondary">Reset</button>
-                  <button class="btn btn-primary">Tambah Menu</button>
+                  <button class="btn btn-primary">Edit Event</button>
                 </div>
               <?php echo form_close()?>
             </div>
