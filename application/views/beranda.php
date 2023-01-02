@@ -82,7 +82,7 @@
                     <div class="col-6 left-side">
                         <h2>Panggon Paseduluran</h2>
                         <p class="mt-5">Cafe yang berdiri di kalasan ini memberikan pengalaman baru bagi penikmat kopi di Daerah Istimewa Yogyakarta. Cafe ini mengangkat tema tradisional klasik jawa sehingga penikmat akan merasakan pengalaman yang berbeda ketika berada di cafe ini.</p>
-                        <a class="btn btn-sm" href="#">Lokasi<i class="fa-solid fa-location-arrow" style="margin-left: 10px;"></i></a>
+                        <a class="btn btn-sm" href="https://goo.gl/maps/S3PaV4Crv1qB3UV79">Lokasi<i class="fa-solid fa-location-arrow" style="margin-left: 10px;"></i></a>
                     </div>
                     <div class="col-6 right-side">
                         <div class="group-box d-flex justify-content-end mb-2">
@@ -104,7 +104,7 @@
                     <div class="col-5 right-side">
                         <h2>Kepuasan kalian adalah rasa senang kami</h2>
                         <p class="mt-5">Kopi yang disediakan di Cafe Panggon Paseduluran memiliki kualitas biji kopi yang tinggi. Berasal dari biji kopi pilihan terbaik dari indonesia menciptakan rasa nikmat saat kopi mulai di nikmati. Yuk kepoin Menu dari kami :D</p>
-                        <a class="btn btn-sm" href="">Menu<i class="fa-regular fa-file-lines" style="margin-left: 10px;"></i></a>
+                        <a class="btn btn-sm" href="<?php echo base_url('Menu/fullmenu');?>">Menu<i class="fa-regular fa-file-lines" style="margin-left: 10px;"></i></a>
                     </div>
                 </div>
             </div>

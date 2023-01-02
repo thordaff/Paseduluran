@@ -3,6 +3,7 @@
 
 *{
     font-family: 'Quicksand';
+    /* border: 1px solid black; */
 }
 /* Sidebar */
 
@@ -40,7 +41,7 @@
     padding: 10px 30px!important;
 
     border-radius: 20px;
-    background: #000000;
+    background: #df9b68;
 }
 
 .active{
@@ -103,4 +104,19 @@
 .trash{
     margin-left: 20px;
     color: rgb(138, 31, 31);
+}
+
+/* Tambah Menu */
+
+.modal-content{
+    border-radius: 25px!important;
+}
+
+.modal-body input{
+    border-radius: 10px;
+}
+
+.modal-footer button{
+    border: 1px solid black;
+    border-radius: 15px;    
 }

@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta content=’width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0′ name=’viewport’ />
+    <meta http-equiv="refresh" content="3; URL=<?php echo base_url('Menu/fullmenu')?>" />
 
     <!-- CSS File -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -57,7 +58,7 @@
                         <h5 class="ms-5 ps-5">Cafe Menu</h5>
                         <div class="title text-center">
                             <h1>Panggon Paseduluran</h1>
-                            <a href="<?php echo base_url();?>Menu/fullmenu"><i class="fa-solid fa-circle-chevron-right fa-lg"></i></a>
+                            <div id="msg"></div>
                         </div>
                     </div>
                     <div class="col-3 right-side ms-auto">

@@ -6,10 +6,10 @@
                     <div class="col left-side">
                         <h6 class="fw-bold mb-4">Navigasi</h6>
                         <div class="d-flex flex-column fw-light my-3">
-                            <a href="#" class="nav-footer">Homepage</a>
-                            <a href="#" class="nav-footer my-2">Menu</a>
-                            <a href="#" class="nav-footer my-2">Maps</a>
-                            <a href="#" class="nav-footer my-2">Informasi Cafe</a>
+                            <a href="<?php echo base_url('Beranda');?>" class="nav-footer">Homepage</a>
+                            <a href="<?php echo base_url('Menu/Fullmenu');?>" class="nav-footer my-2">Menu</a>
+                            <a href="https://goo.gl/maps/S3PaV4Crv1qB3UV79" class="nav-footer my-2">Maps</a>
+                            <a href="<?php echo base_url('Informasi');?>" class="nav-footer my-2">Informasi Cafe</a>
                         </div>
                     </div>
                     <div class="col after-left">

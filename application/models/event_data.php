@@ -31,6 +31,19 @@ class Event_data extends CI_Model {
         return $this->db->get('event')->num_rows();
     }
 
+    function jumlahTotalEvent(){
+        $query = $this->db->get('event');
+        if($query->num_rows()>0)
+        {
+          return $query->num_rows();
+        }
+        else
+        {
+          return 0;
+        }
+
+    }
+
     function deleteData($id){
         return $this->db->delete('event', array('id' => $id));
     }

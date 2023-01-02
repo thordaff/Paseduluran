@@ -25,7 +25,7 @@
                   <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-gauge" style="margin-right: 10px;"></i>dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-list" style="margin-right: 10px;"></i>Kategori</a>
+                  <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard/kategori"><i class="fa-solid fa-list" style="margin-right: 10px;"></i>Kategori</a>
                 </li>
                 <li class="nav-item">
                   <a type="button" class="nav-link active-side" href="<?php echo base_url();?>Admin/Dashboard/menu" class="nav-link"><i class="fa-solid fa-clipboard" style="margin-right: 10px;"></i>Manage Menu</a>
@@ -50,19 +50,18 @@
               <h2 class="ms-5">Manage Menu</h2>
             </div>
             <div class="filter d-flex justify-content-end mt-3">
-              <div class="dropdown">
-                <button class="btn btn-sm dropdown-toggle" type="button" id="Kategori" data-bs-toggle="dropdown">
-                  Filter Kategori
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="Kategori">
-                  <li><a class="dropdown-item" href="#">Manual Brew</a></li>
-                  <li><a class="dropdown-item" href="#">Coffee</a></li>
-                  <li><a class="dropdown-item" href="#">Latte</a></li>
-                  <li><a class="dropdown-item" href="#">Tea Based</a></li>
-                  <li><a class="dropdown-item" href="#">Traditional Drink</a></li>
-                  <li><a class="dropdown-item" href="#">Food</a></li>
-                </ul>
-              </div>
+              <form action="<?php echo base_url('Admin/MenuFilter');?>" method="post">
+                <div class="dropdown">
+                  <button class="btn btn-sm dropdown-toggle" type="button" id="Kategori" data-bs-toggle="dropdown">
+                    Filter Kategori
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="Kategori">
+                    <?php foreach($showK as $s):?>
+                      <li><a class="dropdown-item" href="<?php echo base_url('Menu/Fullmenu');?>" type="button"><?php echo $s['nama'];?></a></li>
+                    <?php endforeach;?>
+                  </ul>
+                </div>
+              </form>
               <button class="btn btn-sm me-4" type="button" data-bs-toggle="modal" data-bs-target="#AddMenu">
                 <i class="fa-solid fa-plus"></i>
                 Tambah Menu
@@ -137,18 +136,18 @@
                   </div>
                   <div class="choose">
                     <label for="pilihan">Hot // Ice ?</label>
-                    <input type="checkbox" name="pilihan" id="pilihan" value="Hot // Ice">
+                    <input type="checkbox" name="pilihan" id="pilihan" >
                   </div>
                   <div class="category mt-3">
                     <label for="kategori">Kategori</label><br>
                     <select name="kategori" id="kategori">
                       <option selected> <?php echo $s['kategori']?></option>
-                      <option value="Manual Brew">Manual Brew</option>
-						          <option value="Coffee">Coffee</option>
-						          <option value="Latte">Latte</option>
-						          <option value="Tea Based">Tea Based</option>
-						          <option value="Traditional Drink">Traditional Drink</option>
-						          <option value="Food">Food</option>
+                      <option value="3">Manual Brew</option>
+						          <option value="1">Coffee</option>
+						          <option value="5">Latte</option>
+						          <option value="4">Tea Based</option>
+						          <option value="6">Traditional Drink</option>
+						          <option value="2">Food</option>
                     </select>
                   </div>
                   <div class="price mt-3">
@@ -158,7 +157,7 @@
                   <div class="status mt-3">
                     <label for="status">Status Menu</label><br>
                     <select name="status" id="status" value="Tersedia">
-                      <option selected>-- Pilih Status Menu --</option>
+                      <option selected><?php echo $s['status'];?></option>
                       <option value="Tersedia">Tersedia</option>
                       <option value="Tidak Tersedia">Tidak Tersedia</option>
                     </select>
@@ -191,16 +190,20 @@
                     <label for="nama">Nama Menu</label><br>
                     <input type="text" name="nama" id="nama">
                   </div>
+                  <div class="choose">
+                    <label for="pilihan">Hot // Ice ?</label>
+                    <input type="checkbox" name="pilihan" id="pilihan" value="Hot // Ice">
+                  </div>
                   <div class="category mt-3">
                     <label for="kategori">Kategori</label><br>
                     <select name="kategori" id="kategori">
                       <option selected> -- Pilih Kategori Menu --</option>
-                      <option value="Manual Brew">Manual Brew</option>
-						          <option value="Coffee">Coffee</option>
-						          <option value="Latte">Latte</option>
-						          <option value="Tea Based">Tea Based</option>
-						          <option value="Traditional Drink">Traditional Drink</option>
-						          <option value="Food">Food</option>
+                      <option value="3">Manual Brew</option>
+						          <option value="1">Coffee</option>
+						          <option value="5">Latte</option>
+						          <option value="4">Tea Based</option>
+						          <option value="6">Traditional Drink</option>
+						          <option value="2">Food</option>
                     </select>
                   </div>
                   <div class="price mt-3">
@@ -217,8 +220,8 @@
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                  <button class="btn btn-primary">Tambah Menu</button>
+                  <button type="reset" class="btn btn-sm reset">Reset</button>
+                  <button class="btn btn-sm add">Tambah Menu</button>
                 </div>
               </form>
             </div>

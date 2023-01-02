@@ -37,7 +37,7 @@
                                 <h3 class="fw-bold">Login</h3>
                             </div>
                             <div class="col reg">
-                                <a href="<?php echo base_url('Auth/register');?>">Register</a>
+                                <a href="#">Register</a>
                             </div>
                         </div>
                     </div>

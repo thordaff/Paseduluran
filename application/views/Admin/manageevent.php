@@ -28,7 +28,7 @@
                   <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-gauge" style="margin-right: 10px;"></i>dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-list" style="margin-right: 10px;"></i>Kategori</a>
+                  <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard/kategori"><i class="fa-solid fa-list" style="margin-right: 10px;"></i>Kategori</a>
                 </li>
                 <li class="nav-item">
                   <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard/menu" class="nav-link"><i class="fa-solid fa-clipboard" style="margin-right: 10px;"></i>Manage Menu</a>
@@ -54,6 +54,7 @@
             </div>
             <div class="filter d-flex justify-content-end mt-3">
               <button class="btn btn-sm me-4" type="button" data-bs-toggle="modal" data-bs-target="#AddEvent">
+                <i class="fa-solid fa-plus"></i>
                 Tambah Event
               </button>
             </div>
@@ -65,14 +66,16 @@
                       <div class="col-7">
                         <h5 class="card-title"><?php echo $s['judul']?></h5>
                         <img src="<?php echo base_url().'/assets/img-event/'.$s['gambar']?>" alt="">
-                        <h6 class="card-subtitle mb-2"> 
+                        <h6 class="card-subtitle mb-2 mt-5"> 
                           <?php echo $s['tanggal']?>
                         </h6>
                         <h6><?php echo $s['isi']?></h6>
                       </div>
                       <div class="col-5">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#editEvent<?php echo $s['id'];?>">Edit Event</button>
-                        <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/deleteEvent/'.$s['id']);?>">Hapus Event</a>
+                        <div class="control ms-auto">
+                          <a type="button" data-bs-toggle="modal" data-bs-target="#editEvent<?php echo $s['id'];?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                          <a onclick="return confirm('Hapus Data ?')" href="<?php echo base_url('Admin/Dashboard/deleteEvent/'.$s['id']);?>"><i class="fa-solid fa-trash trash"></i></a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -110,7 +113,7 @@
                   </div>
                   <div class="tanggal mt-3">
                     <label for="tanggal">Tanggal Event</label><br>
-                    <input type="date" name="tanggal" id="tanggal">
+                    <input type="date" name="tanggal" id="tanggal" placeholder="dd-mm-yyyy">
                   </div>
                   <div class="isi mt-3">
                     <label for="isi">Isi Event</label><br>
@@ -121,8 +124,8 @@
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                  <button class="btn btn-primary">Tambah Event</button>
+                  <button type="reset" class="btn btn-sm">Reset</button>
+                  <button class="btn btn-sm">Tambah Event</button>
                 </div>
               <?php echo form_close()?>
             </div>

@@ -19,6 +19,11 @@ class Menu extends CI_Controller {
 	{
 		$data['showC'] = $this->MenuFilter->coffee();
 		$data['showL'] = $this->MenuFilter->latte();
+		$data['showM'] = $this->MenuFilter->manual();
+		$data['showT'] = $this->MenuFilter->tea();
+		$data['showTr'] = $this->MenuFilter->traditional();
+		$data['showF'] = $this->MenuFilter->food();
+
 		$this->load->view('full-menu',$data);
 	}
 }

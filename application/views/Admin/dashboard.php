@@ -22,10 +22,10 @@
             <div class="side-body mt-5 ms-3 pt-5">
               <ul class="navbar-nav py-4" id="SideNav">
                 <li class="nav-item">
-                  <a type="button" class="nav-link active-side" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-gauge" style="margin-right: 10px;"></i>dashboard</a>
+                  <a type="button" class="nav-link active-side" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-gauge" style="margin-right: 10px;"></i>Dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard"><i class="fa-solid fa-list" style="margin-right: 10px;"></i>Kategori</a>
+                  <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard/kategori"><i class="fa-solid fa-list" style="margin-right: 10px;"></i>Kategori</a>
                 </li>
                 <li class="nav-item">
                   <a type="button" class="nav-link" href="<?php echo base_url();?>Admin/Dashboard/menu" class="nav-link"><i class="fa-solid fa-clipboard" style="margin-right: 10px;"></i>Manage Menu</a>
@@ -55,18 +55,18 @@
                     <div class="card-body">
                       <h5 class="card-title">Menu Cafe</h5>
                       <hr>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="card-link">Card link</a>
-                      <a href="#" class="card-link">Another link</a>
+                      <p>Jumlah Menu</p>
+                      <h1><?php echo $totalM?></h1>
+                      <a href="<?php echo base_url('Admin/Dashboard/Menu');?>" class="card-link d-flex justify-content-end">Manage Menu</a>
                     </div>
                   </div>
                   <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                      <h5 class="card-title">Event Cafe</h5>
+                      <h5 class="card-title">Menu Cafe</h5>
                       <hr>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="card-link">Card link</a>
-                      <a href="#" class="card-link">Another link</a>
+                      <p>Jumlah Event</p>
+                      <h1><?php echo $totalE?></h1>
+                      <a href="<?php echo base_url('Admin/Dashboard/Event');?>" class="card-link d-flex justify-content-end">Manage Event</a>
                     </div>
                   </div>
                   <div class="card" style="width: 18rem;">

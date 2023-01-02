@@ -78,6 +78,38 @@ class Auth extends CI_Controller {
         }
     }
 
+    public function Register()
+    {
+
+        $this->form_validation->set_rules('username', 'Username', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]');
+
+        if ($this->form_validation->run() === false)
+        {
+            $data['judul'] = 'Ruventra - Daftar Akun';
+            $this->load->view('Auth/register', $data);
+        }
+        else
+        {
+            $data =
+            [
+                'username' => htmlspecialchars ($this->input->post('username', true)),
+                'image' => 'default.jpg',
+                'email' => htmlspecialchars ($this->input->post('email', true)),
+                'password' => password_hash ($this->input->post('password'), PASSWORD_DEFAULT),
+                'role_id' => 2,
+                'is_active' => 1,
+                'date_created' => time()
+            ]; 
+
+            $this->db->insert('user', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Sukses Membuat Akun.</div>');
+            redirect('Auth/Login');
+        }
+    }
+
 
     public function Logout()
     {

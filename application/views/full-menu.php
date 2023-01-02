@@ -49,7 +49,7 @@
         <seciton class="full-menu">
             <div class="d-flex justify-content-start">
                 <div class="container">
-                    <div class="full-title">
+                    <div class="full-title mt-2 mb-5 pb-2">
                         <h2 class="fw-bold text-center">Cafe Menu</h2>
                         <div class="desc">
                             <div class="open mx-auto text-center">
@@ -69,10 +69,14 @@
                                 <div class="coffee-based">
                                     <?php foreach($showC as $s):?>
                                     <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold"><?php echo $s['nama']?>
+                                        <h6 class="fw-bold">
+                                            <?php echo $s['nama']?>
                                             <p class="fw-light desc"><?php echo $s['pilihan']?></p>
                                         </h6>
-                                        <p>Rp. <?php echo number_format($s['harga'])?></p>
+                                        <div class="flex-column" style="height: 50px;">
+                                            <p>Rp. <?php echo number_format($s['harga'])?></p>
+                                            <p style="font-size:12px; position:relative; top:-20px;"><?php echo $s['status']?></p>
+                                        </div>
                                     </div>
                                     <?php endforeach;?>
                                 </div>
@@ -84,41 +88,18 @@
                             </div>
                             <div class="menu-body mt-3 d-flex flex-column">
                                 <div class="latte">
+                                    <?php foreach($showL as $s):?>
                                     <div class="menu d-flex justify-content-between">
                                         <h6 class="fw-bold">
-                                            Taro Latte
-                                            <p class="fw-light desc">Hot // Ice</p>
+                                            <?php echo $s['nama']?>
+                                            <p class="fw-light desc"><?php echo $s['pilihan']?></p>
                                         </h6>
-                                        <p>15K</p>
+                                        <div class="flex-column" style="height: 50px;">
+                                            <p>Rp. <?php echo number_format($s['harga'])?></p>
+                                            <p style="font-size:12px; position:relative; top:-20px;"><?php echo $s['status']?></p>
+                                        </div>
                                     </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">
-                                            Matcha Latte
-                                            <p class="fw-light desc">Hot // Ice</p>
-                                        </h6>
-                                        <p>15K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">
-                                            Mango Latte
-                                            <p class="fw-light desc">Hot // Ice</p>
-                                        </h6>
-                                        <p>15K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">
-                                            Red Velvet Latte
-                                            <p class="fw-light desc">Hot // Ice</p>
-                                        </h6>
-                                        <p>15K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">
-                                            Strawberry Latte
-                                            <p class="fw-light desc">Hot // Ice</p>
-                                        </h6>
-                                        <p>15K</p>
-                                    </div>
+                                    <?php endforeach;?>
                                 </div>
                             </div>
                             <div class="menu-title d-flex justify-content-around">
@@ -127,35 +108,19 @@
                                 <div class="rect"></div>
                             </div>
                             <div class="menu-body mt-3 d-flex flex-column">
-                                <div class="latte">
+                                <div class="tea">
+                                    <?php foreach($showT as $s):?>
                                     <div class="menu d-flex justify-content-between">
                                         <h6 class="fw-bold">
-                                            Tea
-                                            <p class="fw-light desc">Hot // Ice</p>
+                                            <?php echo $s['nama']?>
+                                            <p class="fw-light desc"><?php echo $s['pilihan']?></p>
                                         </h6>
-                                        <p>4K</p>
+                                        <div class="flex-column" style="height: 50px;">
+                                            <p>Rp. <?php echo number_format($s['harga'])?></p>
+                                            <p style="font-size:12px; position:relative; top:-20px;"><?php echo $s['status']?></p>
+                                        </div>
                                     </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">
-                                            Lychee Tea
-                                            <p class="fw-light desc">Hot // Ice</p>
-                                        </h6>
-                                        <p>8K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">
-                                            Peach Tea
-                                            <p class="fw-light desc">Hot // Ice</p>
-                                        </h6>
-                                        <p>8K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">
-                                            Strawberry Tea
-                                            <p class="fw-light desc">Hot // Ice</p>
-                                        </h6>
-                                        <p>8K</p>
-                                    </div>
+                                    <?php endforeach;?>
                                 </div>
                             </div>
                         </div>
@@ -167,14 +132,18 @@
                                     <div class="rect"></div>
                                 </div>
                                 <div class="menu-body mt-3 d-flex flex-column">
+                                    <?php foreach ($showM as $s):?>
                                     <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">Vietnam Drip</h6>
-                                        <p>12K</p>
+                                        <h6 class="fw-bold">
+                                            <?php echo $s['nama']?>
+                                            <p class="fw-light desc"><?php echo $s['pilihan']?></p>
+                                        </h6>
+                                        <div class="flex-column" style="height: 50px;">
+                                            <p>Rp. <?php echo number_format($s['harga'])?></p>
+                                            <p style="font-size:12px; position:relative; top:-20px;"><?php echo $s['status']?></p>
+                                        </div>
                                     </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">V60</h6>
-                                        <p>12K</p>
-                                    </div>
+                                    <?php endforeach;?>
                                 </div>
                             </div>
                             <div class="traditional-drink">
@@ -184,26 +153,18 @@
                                     <div class="rect"></div>
                                 </div>
                                 <div class="menu-body mt-3 d-flex flex-column">
+                                    <?php foreach($showTr as $s):?>
                                     <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">Wedhang Jahe</h6>
-                                        <p>5K</p>
+                                        <h6 class="fw-bold">
+                                            <?php echo $s['nama']?>
+                                            <p class="fw-light desc"><?php echo $s['pilihan']?></p>
+                                        </h6>
+                                        <div class="flex-column" style="height: 50px;">
+                                            <p>Rp. <?php echo number_format($s['harga'])?></p>
+                                            <p style="font-size:12px; position:relative; top:-20px;"><?php echo $s['status']?></p>
+                                        </div>
                                     </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">Susu Jahe</h6>
-                                        <p>8K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">Wedhang Jahe</h6>
-                                        <p>5K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">Wedhang Uwuh</h6>
-                                        <p>5K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">Wedhang Bergas</h6>
-                                        <p>5K</p>
-                                    </div>
+                                    <?php endforeach;?>
                                 </div>
                             </div>
                             <div class="food">
@@ -213,30 +174,18 @@
                                     <div class="rect"></div>
                                 </div>
                                 <div class="menu-body mt-3 d-flex flex-column">
+                                    <?php foreach($showF as $s):?>
                                     <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">Telo Goreng</h6>
-                                        <p>8K</p>
+                                        <h6 class="fw-bold">
+                                            <?php echo $s['nama']?>
+                                            <p class="fw-light desc"><?php echo $s['pilihan']?></p>
+                                        </h6>
+                                        <div class="flex-column" style="height: 50px;">
+                                            <p>Rp. <?php echo number_format($s['harga'])?></p>
+                                            <p style="font-size:12px; position:relative; top:-20px;"><?php echo $s['status']?></p>
+                                        </div>
                                     </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">Mendoan</h6>
-                                        <p>8K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">Mie Goreng</h6>
-                                        <p>8K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">Mie Rebus</h6>
-                                        <p>8K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">French Fries</h6>
-                                        <p>10K</p>
-                                    </div>
-                                    <div class="menu d-flex justify-content-between">
-                                        <h6 class="fw-bold">Mie Dok - Dok</h6>
-                                        <p>12K</p>
-                                    </div>
+                                    <?php endforeach;?>
                                 </div>
                             </div>
                         </div>
