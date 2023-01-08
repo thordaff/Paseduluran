@@ -35,14 +35,15 @@
                 </li>
               </ul>
             </div>
-            <div class="side-footer mt-5 pt-4">
+            <div class="side-footer mt-3 pt-4">
+              <hr style="color: white;">
               <a href="<?php echo base_url('Auth/Logout')?>">Log Out</a>
+              <a href="<?php echo base_url('Admin/Profile')?>"><i class="fa-solid fa-gear" style="margin-left: 120px;"></i></a>
             </div>
           </div>
         </div>
         <!-- SideBar Navigation End -->
         <!-- Main Content Start -->
-
         <div class="main-content">
           <div class="container">
             <div class="main-title mt-4">

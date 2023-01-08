@@ -95,7 +95,7 @@
                 <div class="row row-cols-lg-2">
                     <div class="col left-side">
                         <p><span class="fw-bold">Panggon Paseduluran </span>- Lokasi panggon paseduluran yang berada di daerah Kalasan menambah rasa tradisional  yang di usung oleh cafe tersebut menjadi sangat kental. Rimbun nya pepohonan di sekitar cafe dan berada di dekat pendesaan dengan sawah - sawah menghiasai jalanan menuju lokasi.</p>
-                        <a href="#" class="btn btn-sm">Lokasi</a>
+                        <a href="https://goo.gl/maps/gLA34k8p8HyocKxP6" class="btn btn-sm">Lokasi<i class="fa-solid fa-location-arrow" style="margin-left: 10px;"></i></a>
                     </div>
                     <div class="col right-side">
                         <div class="photo-1 ms-auto"></div>
@@ -103,5 +103,16 @@
                 </div>
             </div>
         </section>
+
+        <center class="mt-5">
+            <section class="heroes-text-video mt-5 pt-5">
+                <div class="video">
+                    <h5 class="fw-bold mb-5">Singkat tentang Cafe Panggon Paseduluran</h6>
+                    <video controls width="40%" style="border-radius: 20px;"
+                        src="/assets/image/video-sedulur.mp4">
+                    </video>
+                </div>
+            </section>
+        </center>
 
         <!-- Heroes Content End -->

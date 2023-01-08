@@ -37,6 +37,7 @@
             </div>
             <div class="side-footer mt-5 pt-4">
               <a href="<?php echo base_url('Auth/Logout')?>">Log Out</a>
+              <a href="<?php echo base_url('Admin/Profile')?>"><i class="fa-solid fa-gear" style="margin-left: 120px;"></i></a>
             </div>
           </div>
         </div>
@@ -164,8 +165,8 @@
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                  <button class="btn btn-primary">Edit Menu</button>
+                  <button type="reset" class="btn btn-sm">Reset</button>
+                  <button class="btn btn-sm">Edit Menu</button>
                 </div>
               </form>
             </div>

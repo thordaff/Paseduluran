@@ -84,6 +84,11 @@
     border: 1px solid black;
 }
 
+button:hover{
+    background-color: #CE8147;
+    color: white!important;
+}
+
 .dropdown button:focus{
     box-shadow: none!important;
 }
@@ -95,6 +100,12 @@
 
 .filter button:focus{
     box-shadow: none!important;
+}
+
+.controller-button a{
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 0px 5px;
 }
 
 .control{

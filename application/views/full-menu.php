@@ -73,7 +73,7 @@
                                             <?php echo $s['nama']?>
                                             <p class="fw-light desc"><?php echo $s['pilihan']?></p>
                                         </h6>
-                                        <div class="flex-column" style="height: 50px;">
+                                        <div class="flex-column" style="height: 50px; width:85px;">
                                             <p>Rp. <?php echo number_format($s['harga'])?></p>
                                             <p style="font-size:12px; position:relative; top:-20px;"><?php echo $s['status']?></p>
                                         </div>
@@ -94,7 +94,7 @@
                                             <?php echo $s['nama']?>
                                             <p class="fw-light desc"><?php echo $s['pilihan']?></p>
                                         </h6>
-                                        <div class="flex-column" style="height: 50px;">
+                                        <div class="flex-column" style="height: 50px; width:85px;">
                                             <p>Rp. <?php echo number_format($s['harga'])?></p>
                                             <p style="font-size:12px; position:relative; top:-20px;"><?php echo $s['status']?></p>
                                         </div>
@@ -115,7 +115,7 @@
                                             <?php echo $s['nama']?>
                                             <p class="fw-light desc"><?php echo $s['pilihan']?></p>
                                         </h6>
-                                        <div class="flex-column" style="height: 50px;">
+                                        <div class="flex-column" style="height: 50px; width:85px;">
                                             <p>Rp. <?php echo number_format($s['harga'])?></p>
                                             <p style="font-size:12px; position:relative; top:-20px;"><?php echo $s['status']?></p>
                                         </div>
@@ -138,7 +138,7 @@
                                             <?php echo $s['nama']?>
                                             <p class="fw-light desc"><?php echo $s['pilihan']?></p>
                                         </h6>
-                                        <div class="flex-column" style="height: 50px;">
+                                        <div class="flex-column" style="height: 50px; width:85px;">
                                             <p>Rp. <?php echo number_format($s['harga'])?></p>
                                             <p style="font-size:12px; position:relative; top:-20px;"><?php echo $s['status']?></p>
                                         </div>
@@ -159,7 +159,7 @@
                                             <?php echo $s['nama']?>
                                             <p class="fw-light desc"><?php echo $s['pilihan']?></p>
                                         </h6>
-                                        <div class="flex-column" style="height: 50px;">
+                                        <div class="flex-column" style="height: 50px; width:85px;">
                                             <p>Rp. <?php echo number_format($s['harga'])?></p>
                                             <p style="font-size:12px; position:relative; top:-20px;"><?php echo $s['status']?></p>
                                         </div>
@@ -180,7 +180,7 @@
                                             <?php echo $s['nama']?>
                                             <p class="fw-light desc"><?php echo $s['pilihan']?></p>
                                         </h6>
-                                        <div class="flex-column" style="height: 50px;">
+                                        <div class="flex-column" style="height: 50px; width:85px;">
                                             <p>Rp. <?php echo number_format($s['harga'])?></p>
                                             <p style="font-size:12px; position:relative; top:-20px;"><?php echo $s['status']?></p>
                                         </div>

@@ -88,7 +88,9 @@
     width: 519px;
     height: 278px;
 
-    background-color: grey;
+    background-image: url('/assets/image/photo-homepage.jpg');
+    background-size: cover;
+    border-radius: 10px;
 }
 
 .heroes-content-2{
@@ -207,6 +209,12 @@
 
 .heroes-content-inform .informs-2 .left-side p{
     text-align: justify;
+}
+
+.heroes-content-inform .informs-2 .left-side a{
+    padding: 5px 35px;
+    color: white;
+    background-color: #A66A3D;
 }
 
 .heroes-content-inform .informs-2 .right-side .photo-1{
